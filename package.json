@@ -2,6 +2,7 @@
   "name": "grumbler-ts-scripts",
   "version": "1.0.0",
   "main": "index.js",
+  "description": "Typescript shared scripting template",
   "license": "MIT",
   "private": "false",
   "scripts": {
@@ -77,5 +78,33 @@
     "@types/terser-webpack-plugin": "^4.1.0",
     "@types/webpack": "^4.41.22",
     "@types/webpack-bundle-analyzer": "^3.8.0"
-  }
+  },
+  "browserslist": [
+    "IE >= 9",
+    "chrome >= 27",
+    "firefox >= 30",
+    "safari >= 5",
+    "opera >= 23"
+  ],
+  "files": [
+    "config",
+    "declarations.ts",
+    "src",
+    "@types"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Devs4us/grumbler-ts-scripts.git"
+  },
+  "keywords": [
+    "typescript template",
+    "typescript boilerplate"
+  ],
+  "licenses": [
+    {
+      "type": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  ],
+  "readmeFilename": "README.md"
 }
