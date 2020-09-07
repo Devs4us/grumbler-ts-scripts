@@ -7,7 +7,7 @@ export declare function getNextVersion(pkg: {
     version: string;
 }, level?: ReleaseType): string | null;
 declare type WebPackEntry = string | string[] | webpack.Entry | webpack.EntryFunc;
-declare type WebpackConfigOptions = {
+export declare type WebpackConfigOptions = {
     context?: string;
     entry?: WebPackEntry;
     filename?: string;
@@ -32,5 +32,5 @@ declare type WebpackConfigOptions = {
     optimize?: boolean;
     srcPath?: string[];
 };
-export declare function getWebpackConfig({ context, entry, filename, modulename, libraryTarget, web, test, debug, minify, options, vars, alias, path, env, sourcemaps, cache, analyze, dynamic, optimize, babelConfig, srcPath }?: WebpackConfigOptions): object;
+export declare function getWebPackVariants(configs: WebpackConfigOptions[], BaseConfig?: WebpackConfigOptions): any;
 export {};

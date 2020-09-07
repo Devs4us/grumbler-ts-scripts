@@ -3,7 +3,7 @@
 exports.__esModule = true;
 exports.getCurrentVersion = getCurrentVersion;
 exports.getNextVersion = getNextVersion;
-exports.getWebpackConfig = getWebpackConfig;
+exports.getWebPackVariants = getWebPackVariants;
 
 var _path = require("path");
 
@@ -157,6 +157,15 @@ function getCurrentVersion(pkg) {
 function getNextVersion(pkg, level = "patch") {
   return getCurrentVersion({
     version: _semver.default.inc(pkg.version, level)
+  });
+}
+
+function getWebPackVariants(configs, BaseConfig = {}) {
+  return configs.map(config => {
+    const configMerged = { ...BaseConfig,
+      ...config
+    };
+    return getWebpackConfig(configMerged);
   });
 }
 

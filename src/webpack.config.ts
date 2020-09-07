@@ -13,6 +13,7 @@ import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import { readdir } from "fs-extra";
 import rmrf from "rmfr";
 import processExists from "process-exists";
+import { createVariants, run } from "parallel-webpack"
 
 let cacheDirsCreated = false;
 
@@ -164,7 +165,7 @@ export function getNextVersion(
 
 type WebPackEntry = string | string[] | webpack.Entry | webpack.EntryFunc;
 
-type WebpackConfigOptions = {
+export type WebpackConfigOptions = {
   context?: string;
   entry?: WebPackEntry;
   filename?: string;
@@ -190,7 +191,17 @@ type WebpackConfigOptions = {
   srcPath?: string[];
 };
 
-export function getWebpackConfig({
+export function getWebPackVariants(configs : WebpackConfigOptions[], BaseConfig: WebpackConfigOptions = {}) : any {  
+  return configs.map(config => {
+    const configMerged = {
+      ...BaseConfig,
+      ...config
+    }
+    return getWebpackConfig(configMerged);
+  });
+}
+
+function getWebpackConfig({
   context = process.cwd(),
   entry = "./src/index.ts",
   filename,
