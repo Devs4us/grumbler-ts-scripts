@@ -4,7 +4,9 @@ export async function foo(): Promise<any> {
   const { baz, ...rest } = { baz: 123, x: 1 };
   const berk = { y: 7, ...rest };
 
-  //const { x } = await import("./dependency");
+  if (__DEBUG__) {
+    console.log("I am in debug mode");
+  }
 
   return await new Foo().baz();
 }

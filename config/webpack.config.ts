@@ -13,7 +13,6 @@ import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import { readdir } from "fs-extra";
 import rmrf from "rmfr";
 import processExists from "process-exists";
-import { createVariants, run } from "parallel-webpack"
 
 let cacheDirsCreated = false;
 
@@ -270,7 +269,7 @@ function getWebpackConfig({
         concatenateModules: true,
         minimizer: [
           new TerserPlugin({
-            test: /\.ts$/,
+            test: /\.js$/,
             terserOptions: {
               warnings: false,
               compress: {

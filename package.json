@@ -1,16 +1,17 @@
 {
   "name": "grumbler-ts-scripts",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "index.js",
   "description": "Typescript shared scripting template",
   "license": "MIT",
+  "types": "webpack.config.d.ts",
   "scripts": {
     "watch": "webpack --watch",
     "setup": "yarn",
     "build": "yarn types:build && yarn babel && yarn bundle",
     "start": "webpack-dev-server --progress --colors --open",
     "clean": "rimraf dist coverage",
-    "babel": "babel ./src --ignore=node_modules --extensions=\".ts,.tsx\" --out-dir ./config",
+    "babel": "babel ./config --ignore=node_modules --extensions=\".ts,.tsx\" --out-dir ./config",
     "bundle": "webpack --progress --colors",
     "types:build": "tsc --emitDeclarationOnly",
     "types:check": "tsc --noEmit",
@@ -91,7 +92,6 @@
   ],
   "files": [
     "config",
-    "declarations.ts",
     "src",
     "@types"
   ],

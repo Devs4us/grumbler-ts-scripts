@@ -234,7 +234,7 @@ function getWebpackConfig({
     namedModules: debug,
     concatenateModules: true,
     minimizer: [new _terserWebpackPlugin.default({
-      test: /\.ts$/,
+      test: /\.js$/,
       terserOptions: {
         warnings: false,
         compress: {

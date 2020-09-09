@@ -1,9 +1,12 @@
 import { tmpdir } from "os";
 import { resolve } from "path";
 
-import { getWebPackVariants } from "./config/webpack.config";
+import {
+  getWebPackVariants,
+  WebpackConfigOptions,
+} from "./config/webpack.config";
 
-const BASE_CONFIG = {
+const BASE_CONFIG: WebpackConfigOptions = {
   entry: "./test/module.ts",
   filename: "base-config.js",
   libraryTarget: "window",
@@ -12,15 +15,14 @@ const BASE_CONFIG = {
   debug: true,
 };
 
-export const WEBPACK_CONFIG_TEST = {
-  path: resolve("./build"),
+export const WEBPACK_CONFIG_TEST: WebpackConfigOptions = {
+  path: tmpdir(),
 };
 
-export const WEBPACK_CONFIG_OTHER = {
+export const WEBPACK_CONFIG_OTHER: WebpackConfigOptions = {
   libraryTarget: "umd",
-  filename: "module.umd.js",
+  filename: "module.umd1.js",
   srcPath: [resolve("./test")],
-  test: false,
 };
 
 export default getWebPackVariants(
