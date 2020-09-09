@@ -92,7 +92,8 @@
   "files": [
     "config",
     "src",
-    "@types"
+    "@types",
+    "webpack.config.d.ts"
   ],
   "repository": {
     "type": "git",
