@@ -8,10 +8,9 @@
   "scripts": {
     "watch": "webpack --watch",
     "setup": "yarn",
-    "build": "yarn types:build && yarn babel && yarn bundle",
+    "build": "yarn types:build && yarn bundle",
     "start": "webpack-dev-server --progress --colors --open",
     "clean": "rimraf dist coverage",
-    "babel": "babel ./config --ignore=node_modules --extensions=\".ts,.tsx\" --out-dir ./config",
     "bundle": "webpack --progress --colors",
     "types:build": "tsc --emitDeclarationOnly",
     "types:check": "tsc --noEmit",
