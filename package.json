@@ -1,10 +1,10 @@
 {
   "name": "grumbler-ts-scripts",
   "version": "1.3.2",
-  "main": "index.js",
+  "main": "config/webpack.config.js",
   "description": "Typescript shared scripting template",
   "license": "MIT",
-  "types": "config",
+  "types": "config/webpack.config.d.ts",
   "scripts": {
     "watch": "webpack --watch",
     "setup": "yarn",
